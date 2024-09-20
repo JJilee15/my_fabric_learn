@@ -7,11 +7,11 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public final class TutorialItems {
+public final class firstMod {
 
-    private static final Logger log = LoggerFactory.getLogger(TutorialItems.class);
+    private static final Logger log = LoggerFactory.getLogger(firstMod.class);
 
-    private TutorialItems() {}
+    private firstMod() {}
 
     // 新物品的实例
     public static final Item CUSTOM_ITEM = register("custom_item", new Item(new Item.Settings()));
