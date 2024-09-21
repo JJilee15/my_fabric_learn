@@ -20,16 +20,6 @@ public final class firstMod {
 
     private firstMod() {}
 
-/**
- * news the new item
- * 新物品的实例
- */
-    public static final Item CUSTOM_ITEM = register("custom_item", new Item(settingsInit()));
-
-    public static <T extends Item> T register(String path, T item) {
-        return Registry.register(Registries.ITEM, new  Identifier("firstmod", path), item);}
-
-
     /**
      * 自定义食物组件:
      * 名称: 无用的食物;
@@ -53,9 +43,9 @@ public final class firstMod {
             .build();
 
 
-/**
- * 新物品的初始化
- */
+    /**
+     * 新物品的初始化
+     */
     private static Item.Settings settingsInit() {
         // 自定义物品的设置
         Item.Settings customItemSettings = new Item.Settings();
@@ -63,6 +53,19 @@ public final class firstMod {
         customItemSettings.food(UNUSED_FOOD);
         return customItemSettings;
     }
+
+
+
+    /**
+ * news the new item
+ * 新物品的实例
+ */
+    public static final Item CUSTOM_ITEM = register("custom_item", new Item(settingsInit()));
+
+
+    public static <T extends Item> T register(String path, T item) {
+        return Registry.register(Registries.ITEM, new  Identifier("firstmod", path), item);}
+
 
 
 /**

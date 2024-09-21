@@ -22,8 +22,8 @@ public class ExampleMod implements ModInitializer {
     // zh: 这个 logger 用于向控制台和日志文件输出文本。
     // 最佳实践是使用你的 mod id 作为 logger 的名称。这样可以清楚地知道哪个 mod 输出了信息、警告和错误。
 
-    public static final String MOD_ID = "examplemod";
-    public static final String MOD_NAME = "firstmod";
+    public static final String MOD_ID = "firstmod";
+    public static final String MOD_NAME = "examplemod";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
@@ -35,9 +35,14 @@ public class ExampleMod implements ModInitializer {
 
         LOGGER.info(" Start load {}",MOD_NAME);
 
+        LOGGER.info(" Register item group");
         firstMod.initialize();
 
+        LOGGER.info(" Register tools");
+        myTools.initialize();
 
+        LOGGER.info(" Register blocks");
+        LOGGER.info(" End load {}",MOD_NAME);
     }
 
 
