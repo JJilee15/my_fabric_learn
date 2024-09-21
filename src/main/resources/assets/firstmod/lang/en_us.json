@@ -1,3 +1,4 @@
 {
-    "item.firstmod.custom_item": "Example Item"
+    "item.firstmod.custom_item": "Example Item",
+    "itemGroup.firstmod.test_group": "Test Group"
 }

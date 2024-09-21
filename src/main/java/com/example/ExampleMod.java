@@ -2,6 +2,16 @@ package com.example;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +36,13 @@ public class ExampleMod implements ModInitializer {
         LOGGER.info(" Start load {}",MOD_NAME);
 
         firstMod.initialize();
+
+
     }
 
+
+
 }
+
+
 

@@ -1,3 +1,4 @@
 {
-    "item.firstmod.custom_item": "示例物品"
+    "item.firstmod.custom_item": "示例物品",
+    "itemGroup.firstmod.test_group": "测试组"
 }
