@@ -6,16 +6,13 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 
-public class myTools{
+public class MyTools {
 
 /**
  * 外部实现类
  */
-    public static class GuideToolMaterial implements ToolMaterial {
+    private static class GuideToolMaterial implements ToolMaterial {
         private final int durability;
         private final float miningSpeed;
         private final float attackDamage;
@@ -24,7 +21,7 @@ public class myTools{
         private final Ingredient repairIngredient;
 
         // 构造函数
-        public GuideToolMaterial(int durability, float miningSpeed, float attackDamage, int miningLevel, int enchantability, Ingredient repairIngredient) {
+        private GuideToolMaterial(int durability, float miningSpeed, float attackDamage, int miningLevel, int enchantability, Ingredient repairIngredient) {
             this.durability = durability;
             this.miningSpeed = miningSpeed;
             this.attackDamage = attackDamage;
@@ -67,7 +64,7 @@ public class myTools{
     /**
      * 建造者类
      */
-    public static class GuideToolMaterialBuilder {
+    private static class GuideToolMaterialBuilder {
         private int durability;
         private float miningSpeed;
         private float attackDamage;
@@ -126,7 +123,7 @@ public class myTools{
            .setAttackDamage(5.0F)
            .setMiningLevel(1)
            .setEnchantability(10)
-           .setRepairIngredient(Ingredient.ofItems(myItem.CUSTOM_ITEM, Items.STONE))
+           .setRepairIngredient(Ingredient.ofItems(MyItem.CUSTOM_ITEM, Items.STONE))
            .build();
 
     public static final FoodComponent TOOL_FOOD = new FoodComponent.Builder()
@@ -138,7 +135,7 @@ public class myTools{
     /**
      * 新物品的初始化
      */
-    private static Item.Settings settingsInit() {
+    public static Item.Settings itemSettingsInit() {
         // 自定义物品的设置
         Item.Settings ItemSettings = new Item.Settings();
         ItemSettings.food(TOOL_FOOD);
@@ -152,18 +149,13 @@ public class myTools{
      * Shovel : zh-CN: 铲
      * HOE : zh-CN: 锹
      */
-    public static final Item MY_TOOL_0 = register("my_tool_0", new PickaxeItem(USELESS_PICKAXE_MATERIAL, 1, 5F, settingsInit()));
+    public static final Item MY_TOOL_0 = FirstMod.register("my_tool_0", new PickaxeItem(USELESS_PICKAXE_MATERIAL, 1, 5F, itemSettingsInit()));
 
-
-    public static <T extends Item> T register(String path, T item) {
-        return Registry.register(Registries.ITEM, new Identifier("firstmod", path), item);
-
-    }
 
     public static void addToGroup(){
         // ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.add(myTools.MY_TOOL_0));
-        firstMod.addToGroup(ItemGroups.TOOLS, MY_TOOL_0);
-        myItemGroup.addToGroup(MY_TOOL_0);
+        FirstMod.addToGroup(ItemGroups.TOOLS, MY_TOOL_0);
+        MyItemGroup.addToGroup(MY_TOOL_0);
     }
 
     public static void initialize() {

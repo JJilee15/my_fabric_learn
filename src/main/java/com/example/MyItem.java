@@ -11,7 +11,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class myItem {
+public class MyItem {
+
+    public static final String MyItem_ID = "custom_item";
 
     /**
      * 自定义食物组件:
@@ -48,16 +50,15 @@ public class myItem {
     }
 
 
-
     /**
      * news the new item
      * 新物品的实例
      */
-    public static final Item CUSTOM_ITEM = register("custom_item", new Item(settingsInit()));
+    public static final Item CUSTOM_ITEM = register(MyItem_ID, new Item(settingsInit()));
 
 
     public static <T extends Item> T register(String path, T item) {
-        return Registry.register(Registries.ITEM, new Identifier("firstmod", path), item);}
+        return Registry.register(Registries.ITEM, new Identifier(ExampleMod.MOD_ID, path), item);}
 
 
     public static void initialize() {
@@ -67,8 +68,8 @@ public class myItem {
         CompostingChanceRegistry.INSTANCE.add(CUSTOM_ITEM, 0.65F);
 
         // 物品添加到组   add the new item to the group
-        firstMod.addToGroup(ItemGroups.NATURAL, CUSTOM_ITEM);
-        myItemGroup.addToGroup(CUSTOM_ITEM);
+        FirstMod.addToGroup(ItemGroups.NATURAL, CUSTOM_ITEM);
+        MyItemGroup.addToGroup(CUSTOM_ITEM);
 
     }
 }

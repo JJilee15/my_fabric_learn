@@ -10,7 +10,7 @@
         }
     },
     "result": {
-        "item": "firstmod:custom_item",
+        "item": "my_mod:custom_item",
         "count": 2
     }
 }

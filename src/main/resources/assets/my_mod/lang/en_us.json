@@ -1,0 +1,10 @@
+{
+    "item.my_mod.custom_item"               : "Example Item",
+    "item.my_mod.my_tool_0"                 : "Useless tool",
+    "item.my_mod.my_armor_1_helmet"         : "Useless armor helmet",
+    "item.my_mod.my_armor_1_chestplate"     : "Useless armor chestplate",
+    "item.my_mod.my_armor_1_leggings"       : "Useless armor leggings",
+    "item.my_mod.my_armor_1_boots"          : "Useless armor boots",
+    "MyItemGroup.my_mod.test_group"         : "Test Group",
+    "tooltip.myBlock.info"                  : "My Block Tooltip"
+}
