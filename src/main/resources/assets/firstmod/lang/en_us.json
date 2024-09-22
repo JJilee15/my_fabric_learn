@@ -1,6 +1,6 @@
 {
-    "item.firstmod.custom_item": "Example Item",
-    "item.firstmod.my_tool_0": "Useless tool",
-    "itemGroup.firstmod.test_group": "Test Group",
-    "tooltip.myBlock.info": "My Block Tooltip"
+    "item.firstmod.custom_item"             : "Example Item",
+    "item.firstmod.my_tool_0"               : "Useless tool",
+    "itemGroup.firstmod.test_group"         : "Test Group",
+    "tooltip.myBlock.info"                  : "My Block Tooltip"
 }

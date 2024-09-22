@@ -1,4 +1,6 @@
 {
-    "item.firstmod.custom_item": "示例物品",
-    "itemGroup.firstmod.test_group": "测试"
+    "item.firstmod.custom_item"             : "示例物品",
+    "item.firstmod.my_tool_0"               : "工具0",
+    "itemGroup.firstmod.test_group"         : "测试",
+    "tooltip.myBlock.info"                  : "这是我的方块的提示信息。"
 }

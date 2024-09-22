@@ -1,6 +1,5 @@
 package com.example;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -108,25 +107,32 @@ public class myTools{
 
         public ToolMaterial build() {
             // 使用外部类的构造函数创建实例
-            return new GuideToolMaterial(durability, miningSpeed, attackDamage, miningLevel, enchantability, repairIngredient);
+            return new GuideToolMaterial(durability, miningSpeed, attackDamage,
+                    miningLevel, enchantability, repairIngredient);
         }
     }
 
-    // 工具材料_1
-
-    public static final ToolMaterial UNUSED_PICKAXE_MATERIAL = new GuideToolMaterialBuilder()
+    /** 工具材料: USELESS_PICKAXE_MATERIAL
+    * <p>耐久度: 1000
+    * <p>挖掘速度: 10.0F
+    * <p>攻击伤害: 5.0F
+    * <p>破坏等级: 1
+    * <p>附魔等级: 10
+    * <p>修复材料: CUSTOM_ITEM, STONE
+    */
+    public static final ToolMaterial USELESS_PICKAXE_MATERIAL = new GuideToolMaterialBuilder()
            .setDurability(1000)
            .setMiningSpeed(10.0F)
            .setAttackDamage(5.0F)
            .setMiningLevel(1)
            .setEnchantability(10)
-           .setRepairIngredient(Ingredient.ofItems(firstMod.CUSTOM_ITEM, Items.STONE))
+           .setRepairIngredient(Ingredient.ofItems(myItem.CUSTOM_ITEM, Items.STONE))
            .build();
 
     public static final FoodComponent TOOL_FOOD = new FoodComponent.Builder()
-            .hunger(1)
-            .saturationModifier(0.5F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 60*20, 1), 0.5F)
+            .hunger(2)
+            .saturationModifier(4F)
+            .statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 5*20, 4), 0.5F)
             .statusEffect(new StatusEffectInstance(StatusEffects.LUCK, 60*20, 0), 1.0F)
             .build();
     /**
@@ -140,13 +146,13 @@ public class myTools{
     }
 
     /**
-         * SWORD : zn-CN: 剑
-         * Axe : zh-CN: 斧头
-         * Pickaxe : zh-CN: 镐
-         * Shovel : zh-CN: 铲
-         * HOE : zh-CN: 锹
-         */
-    public static final Item MY_TOOL_0 = register("my_tool_0", new PickaxeItem(UNUSED_PICKAXE_MATERIAL, 1, -5F, settingsInit()));
+     * SWORD : zn-CN: 剑
+     * Axe : zh-CN: 斧头
+     * Pickaxe : zh-CN: 镐
+     * Shovel : zh-CN: 铲
+     * HOE : zh-CN: 锹
+     */
+    public static final Item MY_TOOL_0 = register("my_tool_0", new PickaxeItem(USELESS_PICKAXE_MATERIAL, 1, 5F, settingsInit()));
 
 
     public static <T extends Item> T register(String path, T item) {
@@ -154,15 +160,19 @@ public class myTools{
 
     }
 
+    public static void addToGroup(){
+        // ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.add(myTools.MY_TOOL_0));
+        firstMod.addToGroup(ItemGroups.TOOLS, MY_TOOL_0);
+        myItemGroup.addToGroup(MY_TOOL_0);
+    }
 
     public static void initialize() {
-
         // 可做燃料 can be fuel
         FuelRegistry.INSTANCE.add(MY_TOOL_0, 20);
         // 可堆肥  can be composted
         CompostingChanceRegistry.INSTANCE.add(MY_TOOL_0, 0.65F);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> content.add(myTools.MY_TOOL_0));
+        addToGroup();
 
     }
 }
