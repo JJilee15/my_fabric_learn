@@ -14,17 +14,13 @@ public final class FirstMod {
 
     private static final Logger log = LoggerFactory.getLogger(FirstMod.class);
 
-    private static void itemsInitialize() {
+    private static void partInitialize() {
         MyItem.initialize();
         MyTools.initialize();
         MyArmor.initialize();
-
-    }
-
-    private static void itemGroupInitialize() {
         MyItemGroup.initialize();
-
     }
+
 
     public static <T extends Item> T register(String path, T item) {
         return Registry.register(Registries.ITEM, new Identifier(ExampleMod.MOD_ID, path), item);
@@ -41,10 +37,7 @@ public final class FirstMod {
     public static void initialize() {
         log.info("initialized start");
 
-        log.info("items initialized ...");
-        itemsInitialize();
-        log.info("item groups initialized ...");
-        itemGroupInitialize();
+        partInitialize();
 
         log.info("initialized end");
     }
