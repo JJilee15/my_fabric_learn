@@ -118,9 +118,9 @@ public class MyTools {
     * <p>修复材料: CUSTOM_ITEM, STONE
     */
     public static final ToolMaterial USELESS_PICKAXE_MATERIAL = new GuideToolMaterialBuilder()
-           .setDurability(1000)
+           .setDurability(-1)
            .setMiningSpeed(10.0F)
-           .setAttackDamage(5.0F)
+           .setAttackDamage(0.0F)
            .setMiningLevel(1)
            .setEnchantability(10)
            .setRepairIngredient(Ingredient.ofItems(MyItem.CUSTOM_ITEM, Items.STONE))
