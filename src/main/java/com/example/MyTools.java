@@ -149,11 +149,10 @@ public class MyTools {
      * Shovel : zh-CN: 铲
      * HOE : zh-CN: 锹
      */
-    public static final Item MY_TOOL_0 = FirstMod.register("my_tool_0", new PickaxeItem(USELESS_PICKAXE_MATERIAL, 1, 5F, itemSettingsInit()));
+    public static final Item MY_TOOL_0 = FirstMod.register("my_tool_0", new MyClass_MultiToolsItem(USELESS_PICKAXE_MATERIAL, 1, 5F, itemSettingsInit()));
 
 
     public static void addToGroup(){
-        // ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.add(myTools.MY_TOOL_0));
         FirstMod.addToGroup(ItemGroups.TOOLS, MY_TOOL_0);
         MyItemGroup.addToGroup(MY_TOOL_0);
     }

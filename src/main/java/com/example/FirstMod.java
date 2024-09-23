@@ -18,6 +18,7 @@ public final class FirstMod {
         MyItem.initialize();
         MyTools.initialize();
         MyArmor.initialize();
+
         MyItemGroup.initialize();
     }
 

@@ -9,12 +9,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MyClass_MultiToolsItem
-        extends MyClass_CombineSwordAndMiningItem {
+        extends MyClass_CombineSwordAndMiningItem
+        implements Vanishable{
 
-    private final PickaxeItem pickaxeItem;
-    private final AxeItem axeItem;
-    private final ShovelItem shovelItem;
-    private final HoeItem hoeItem;
+//    private final PickaxeItem pickaxeItem;
+//    private final AxeItem axeItem;
+//    private final ShovelItem shovelItem;
+//    private final HoeItem hoeItem;
 
     public static final List<TagKey<Block>> effectiveBlocksList = Arrays.asList(
             BlockTags.PICKAXE_MINEABLE,
@@ -25,10 +26,10 @@ public class MyClass_MultiToolsItem
 
     public MyClass_MultiToolsItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, effectiveBlocksList, settings);
-        this.pickaxeItem = new PickaxeItem(toolMaterial, attackDamage, attackSpeed, settings);
-        this.axeItem = new AxeItem(toolMaterial, attackDamage, attackSpeed, settings);
-        this.shovelItem = new ShovelItem(toolMaterial, attackDamage, attackSpeed, settings);
-        this.hoeItem = new HoeItem(toolMaterial, attackDamage, attackSpeed, settings);
+//        this.pickaxeItem = new PickaxeItem(toolMaterial, attackDamage, attackSpeed, settings);
+//        this.axeItem = new AxeItem(toolMaterial, attackDamage, attackSpeed, settings);
+//        this.shovelItem = new ShovelItem(toolMaterial, attackDamage, attackSpeed, settings);
+//        this.hoeItem = new HoeItem(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
 
