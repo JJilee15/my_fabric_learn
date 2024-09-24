@@ -118,9 +118,9 @@ public class MyTools {
     * <p>修复材料: CUSTOM_ITEM, STONE
     */
     public static final ToolMaterial USELESS_PICKAXE_MATERIAL = new GuideToolMaterialBuilder()
-           .setDurability(-1)
+           .setDurability(11)
            .setMiningSpeed(10.0F)
-           .setAttackDamage(0.0F)
+           .setAttackDamage(5.0F)
            .setMiningLevel(1)
            .setEnchantability(10)
            .setRepairIngredient(Ingredient.ofItems(MyItem.CUSTOM_ITEM, Items.STONE))
@@ -138,7 +138,7 @@ public class MyTools {
     public static Item.Settings itemSettingsInit() {
         // 自定义物品的设置
         Item.Settings ItemSettings = new Item.Settings();
-        ItemSettings.food(TOOL_FOOD);
+        //ItemSettings.food(TOOL_FOOD);
         return ItemSettings;
     }
 
