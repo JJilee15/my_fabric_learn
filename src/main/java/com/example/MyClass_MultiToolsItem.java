@@ -42,6 +42,7 @@ public class MyClass_MultiToolsItem
 
     public MyClass_MultiToolsItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, effectiveBlocksList, settings);
+
     }
 
     @Override

@@ -6,6 +6,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.util.Rarity;
 
 public class MyTools {
 
@@ -138,7 +139,8 @@ public class MyTools {
     public static Item.Settings itemSettingsInit() {
         // 自定义物品的设置
         Item.Settings ItemSettings = new Item.Settings();
-        //ItemSettings.food(TOOL_FOOD);
+        ItemSettings.food(TOOL_FOOD);
+        ItemSettings.rarity(Rarity.RARE);
         return ItemSettings;
     }
 
@@ -162,6 +164,7 @@ public class MyTools {
         FuelRegistry.INSTANCE.add(MY_TOOL_0, 20);
         // 可堆肥  can be composted
         CompostingChanceRegistry.INSTANCE.add(MY_TOOL_0, 0.65F);
+
 
         addToGroup();
 

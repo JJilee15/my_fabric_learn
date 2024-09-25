@@ -9,16 +9,17 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(targets = "net.minecraft.enchantment.EnchantmentTarget$6")
+@Mixin(targets = "net.minecraft.enchantment.EnchantmentTarget$11")
 public abstract class MymodMixin_InjectEnchantmentTarget_WEAPON {
-    @Inject(method = "isAcceptableItem",at = @At(value = "HEAD"),cancellable = true)
-    private void isAcceptableItemAcceptMyClass_MultiToolsItem(Item item, CallbackInfoReturnable<Boolean> cir) {
-        System.out.println(item.getName());
-        if(item instanceof SwordItem || item instanceof MyClass_MultiToolsItem)
-            cir.setReturnValue(true);
-
-        cir.setReturnValue(false);
-    }
-
+//    @Inject(method = "isAcceptableItem", at = @At("HEAD"), cancellable = true)
+//    private void isAcceptableItemReturnFalse(Item item, CallbackInfoReturnable<Boolean> cir)
+//    {
+//        if(item instanceof SwordItem || item instanceof MyClass_MultiToolsItem)
+//        {
+//            cir.setReturnValue(true);
+//        }
+//        else
+//            cir.setReturnValue(false);
+//    }
 }
 
