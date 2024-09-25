@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ExampleMixin",
-		"MymodMixin_RedirectEnchantmentTarget_WEAPON"
+		"MymodMixin_InjectEnchantmentTarget_BREAKABLE",
+		"MymodMixin_InjectEnchantmentTarget_DIG",
+		"MymodMixin_InjectEnchantmentTarget_WEAPON"
 	],
 	"injectors": {
 		"defaultRequire": 1
